@@ -1,0 +1,260 @@
+ body {
+        background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    .floating-confession-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1000;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .confession-orb {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow:
+            0 8px 32px rgba(99, 102, 241, 0.3),
+            0 0 0 0 rgba(236, 72, 153, 0.4);
+        animation: float 3s ease-in-out infinite, pulse 2s infinite;
+    }
+
+    .confession-orb:hover {
+        transform: scale(1.1) translateY(-5px);
+        box-shadow:
+            0 15px 40px rgba(99, 102, 241, 0.4),
+            0 0 0 20px rgba(236, 72, 153, 0.1);
+    }
+
+    .confession-orb:active {
+        transform: scale(0.95);
+    }
+
+    .confession-icon {
+        color: white;
+        font-size: 24px;
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 2;
+    }
+
+    .confession-orb:hover .confession-icon {
+        transform: rotate(15deg) scale(1.1);
+    }
+
+    /* Floating animation */
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    /* Pulse animation */
+    @keyframes pulse {
+        0% {
+            box-shadow:
+                0 8px 32px rgba(99, 102, 241, 0.3),
+                0 0 0 0 rgba(236, 72, 153, 0.4);
+        }
+
+        50% {
+            box-shadow:
+                0 8px 32px rgba(99, 102, 241, 0.5),
+                0 0 0 10px rgba(236, 72, 153, 0.2);
+        }
+
+        100% {
+            box-shadow:
+                0 8px 32px rgba(99, 102, 241, 0.3),
+                0 0 0 0 rgba(236, 72, 153, 0.4);
+        }
+    }
+
+    /* Sparkle effects */
+    .sparkle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: white;
+        border-radius: 50%;
+        animation: sparkle 2s linear infinite;
+        opacity: 0;
+    }
+
+    .sparkle:nth-child(1) {
+        top: 10px;
+        left: 20px;
+        animation-delay: 0s;
+    }
+
+    .sparkle:nth-child(2) {
+        top: 20px;
+        right: 15px;
+        animation-delay: 0.5s;
+    }
+
+    .sparkle:nth-child(3) {
+        bottom: 15px;
+        left: 25px;
+        animation-delay: 1s;
+    }
+
+    .sparkle:nth-child(4) {
+        bottom: 25px;
+        right: 20px;
+        animation-delay: 1.5s;
+    }
+
+    @keyframes sparkle {
+
+        0%,
+        100% {
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        50% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    /* Tooltip */
+    .tooltip {
+        position: absolute;
+        bottom: 80px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 20px;
+        font-size: 14px;
+        white-space: nowrap;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .tooltip::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        right: 20px;
+        border: 6px solid transparent;
+        border-top-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .floating-confession-btn:hover .tooltip {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Click ripple effect */
+    .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(0);
+        animation: ripple-animation 0.6s linear;
+        pointer-events: none;
+    }
+
+    @keyframes ripple-animation {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+
+    /* Glow effect */
+    .confession-orb::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(135deg, #6366f1, #ec4899, #6366f1);
+        border-radius: 50%;
+        z-index: -1;
+        animation: rotate 3s linear infinite;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .confession-orb:hover::before {
+        opacity: 0.7;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Floating particles */
+    .particle {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: linear-gradient(45deg, #6366f1, #ec4899);
+        border-radius: 50%;
+        animation: float-particle 4s ease-in-out infinite;
+        opacity: 0.6;
+    }
+
+    .particle:nth-child(5) {
+        top: -20px;
+        left: 10px;
+        animation-delay: 0s;
+    }
+
+    .particle:nth-child(6) {
+        top: -15px;
+        right: 5px;
+        animation-delay: 1s;
+    }
+
+    .particle:nth-child(7) {
+        bottom: -18px;
+        left: 15px;
+        animation-delay: 2s;
+    }
+
+    @keyframes float-particle {
+
+        0%,
+        100% {
+            transform: translateY(0px) rotate(0deg);
+            opacity: 0.6;
+        }
+
+        50% {
+            transform: translateY(-30px) rotate(180deg);
+            opacity: 0.2;
+        }
+    }
