@@ -20,8 +20,9 @@
     <div class="glow w-72 h-72 top-1/3 left-1/2 transform -translate-x-1/2" style="background: var(--accent);"></div>
     <div class="glow w-64 h-64 bottom-1/3 left-1/4" style="background: linear-gradient(45deg, #10b981, #8b5cf6);"></div>
 
+    <?php include('../../components/common/header.php') ?>
     <!-- Main Content -->
-    <section class="pt-24 pb-20 relative z-10">
+    <section class="pt-24 pb-20 relative z-10 mt-4">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <!-- Header -->
@@ -329,6 +330,7 @@ I'm working on becoming the person I should have been then. It's a slow process,
         </div>
     </section>
 
+    <?php include('../../components/common/footer.php') ?>
     <script src="../../script/js/editconfession.script.js">
 
 

@@ -20,7 +20,9 @@
   <div class="glow w-64 h-64 top-1/3 right-1/4"></div>
 
   <!-- Navbar -->
-<?php include('../../components/common/header.php') ?>
+
+
+ <?php include('../../components/common/header.php') ?>
 
   <!-- Header Section -->
   <section class="pt-24 pb-8 relative z-10 mt-4">
@@ -78,15 +80,17 @@
                   <i class="fas fa-ellipsis-h"></i>
                 </button>
                 <div class="dropdown-menu absolute right-0 mt-2 w-32 bg-gray-800 rounded-lg shadow-lg py-2 hidden">
-                  <button class="w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">
+                 <a href="../user/editmyconfession.php"><button class="w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">
                     <i class="fas fa-edit mr-2"></i>Edit
                   </button>
+                </a> 
                   <button class="w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">
                     <i class="fas fa-trash mr-2"></i>Delete
                   </button>
-                  <button class="w-full text-left px-4 py-2 text-sm text-red-400 hover:bg-gray-700">
+                  <a href="../user/report.php"><button class="w-full text-left px-4 py-2 text-sm text-red-400 hover:bg-gray-700">
                     <i class="fas fa-flag mr-2"></i>Report
-                  </button>
+                  </button></a>
+                  
                 </div>
               </div>
             </div>
@@ -208,9 +212,10 @@
                   <i class="fas fa-ellipsis-h"></i>
                 </button>
                 <div class="dropdown-menu absolute right-0 mt-2 w-32 bg-gray-800 rounded-lg shadow-lg py-2 hidden">
-                  <button class="w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">
+                <a href="../user/editmyconfession.php"><button class="w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">
                     <i class="fas fa-edit mr-2"></i>Edit
                   </button>
+                </a> 
                   <button class="w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">
                     <i class="fas fa-trash mr-2"></i>Delete
                   </button>
@@ -284,9 +289,10 @@
                   <i class="fas fa-ellipsis-h"></i>
                 </button>
                 <div class="dropdown-menu absolute right-0 mt-2 w-32 bg-gray-800 rounded-lg shadow-lg py-2 hidden">
-                  <button class="w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">
+                <a href="../user/editmyconfession.php"><button class="w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">
                     <i class="fas fa-edit mr-2"></i>Edit
                   </button>
+                </a> 
                   <button class="w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">
                     <i class="fas fa-trash mr-2"></i>Delete
                   </button>
